@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}퍼스널 컬러 분석 결과{% endblock %}
+
+{% block headscript %}
+<link rel="stylesheet" href={{result_t_color}}>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<style>
+.result_e_font {
+font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<!-- Page content -->
+<br>
+
+<div class="w3-container w3-content w3-center" style="max-width:800px">
+	<h5><b><u>퍼스널 컬러 진단 결과</u></b></h5>
+	
+	<div class="w3-right">
+		<a href="javascript:window.print()"><button class="w3-button w3-round-large w3-blue-grey" id="print-button">결과 출력</button></a>
+	</div>
+</div>
+
+<div class="w3-container">
+	<div class="w3-content w3-center w3-round-large w3-panel w3-theme-l4" style="max-width:800px">
+	<br>
+		<div class="w3-container">
+			<!-- 인물 사진  -->
+			<img src="/media/face_detect.jpg" style="max-height:200px; max-width:100%">
+		</div>
+		<br>
+		<b>당신의 퍼스널 컬러는?<br></b>
+		<font color="" class="w3-theme-d3 result_e_font" size=5><b>&nbsp{{result_name}}&nbsp</b><br></font>
+		<br>
+		<b>━ '<font class="w3-theme-l1">{{result_name}}</font>' 타입의 특징 ━</b>
+		<div class="w3-content w3-panel w3-round-large w3-white" width="100%"> 
+			<div class="" style="padding:10px" style="max-width:600px">
+			{% autoescape off %}
+				{{ result_text }}
+			{% endautoescape %}
+			</div>
+		</div>
+		<br>
+		
+		<b>━ '<font class="w3-theme-l1">{{result_name}}</font>' Best Color ━</b>
+		<div class="w3-content w3-panel w3-round-large w3-white" width="100%"> 
+			<img src="{{color_chart_path}}" width="100%"  style="padding:10px 0px 10px 0px; max-width :700px">
+			<img src="{{result_KS}}" width="100%"  style="padding:10px 0px 10px 0px; max-width :700px">
+		</div>
+		<br>
+		
+		<b>━ '<font class="w3-theme-l1">{{result_name}}</font>' 타입 대표 연예인 ━</b>
+		<div class="w3-content w3-panel w3-round-large w3-white" width="100%"> 
+			<div class="" style="padding:10px" style="max-width :600px">
+				<img src="{{ result_person }}" width="100%" style="max-width:600px">
+			</div>
+		</div>
+		<br>
+	</div>
+</div>
+
+<div class="w3-content w3-center" style="max-width:800px">
+	<a href="javascript:window.print()"><button class="w3-button w3-round-large w3-blue-grey" id="print-button">결과 출력 하기</button></a>
+	<a href="/aiface"><button class="w3-button w3-round-large w3-blue-grey">다시 분석하기</button></a> 
+</div>
+<br>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}분석 오류{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<!-- Page content -->
+<div class="w3-container w3-center" >
+	<img src="/static/images/fail_notice.PNG" style="max-width:200px; padding-top:15px"">
+	<br>
+	<div class="w3-content w3-panel w3-light-grey" style="padding:15px; max-width:500px"">	
+		<b>분석에 실패 했습니다.</b><br>
+		사진에서 인물의 얼굴을 인식할 수 없습니다.<br>
+		다른 사진으로 재시도 해주세요.
+	</div>
+	<br>
+	<br>
+	<a href="/aiface"><button class="w3-button w3-round-large w3-blue-grey">다시 분석 하기</button></a> 
+</div>
+<br>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>MyTone::{% block title %}{% endblock %}</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
+	<!-- 모바일 사이즈 메뉴 토글 -->
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("navDemo");
+		  if (x.className.indexOf("w3-show") == -1) {
+		    x.className += " w3-show";
+		  } else { 
+		    x.className = x.className.replace(" w3-show", "");
+		  }
+		}
+	</script>
+	
+	<!-- 폰트, 횡스크롤 금지 -->
+	<style>
+		html, body {font-family: "Lato", sans-serif;
+			  max-width: 100%;
+			  overflow-x: hidden;
+		}
+	</style>
+
+
+{% block headscript %}
+{% endblock %}
+</head>
+
+<body>
+<!-- Navbar 시작 -->
+	<!-- Navbar on wide screen -->
+	<div class="w3-top">
+	  <div class="w3-bar w3-white w3-bottombar w3-border-red w3-card">
+	    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	    	<a href="/main" class="w3-bar-item w3-button w3-padding-large"><b>MyTone</b></a>
+	    	<a href="/aiface" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AI 퍼스널컬러 분석</a>
+	  </div>
+	</div>
+	
+	<!-- Navbar on small screens -->
+	<div id="navDemo" class="w3-bar-block w3-theme-l1 w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		<a href="/aiface" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AI 퍼스널컬러 분석</a>
+	</div>
+<!-- Navbar 끝 -->
+
+{% block content %}
+{% endblock %}
+
+
+<!-- footer 시작 -->
+<footer class="w3-container w3-padding-32 w3-center w3-dark-grey w3-xlarge">
+<div class= "w3-small w3-text-light-grey">
+contact | <a href="mailto:email@eamil.com" target="_blank">email@eamil.com</a></br>
+ⓒ acorn Inc. All Rights Reserved.
+</div>
+</footer>
+<!-- footer 끝 -->
+
+</body>
+</html>
